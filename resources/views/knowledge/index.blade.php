@@ -1,0 +1,16 @@
+<x-app-layout>
+    <x-slot:header>Pusat Pengetahuan</x-slot:header>
+    <x-page-header eyebrow="Solusi terdokumentasi" title="Pusat pengetahuan TI" description="Temukan panduan troubleshooting yang dapat digunakan kembali.">
+        @can('create', App\Models\KnowledgeArticle::class)
+            <x-slot:actions>
+                <a class="btn-primary" href="{{ route('knowledge.create') }}"><x-icon name="plus" size="17" /> Tulis artikel</a>
+            </x-slot:actions>
+        @endcan
+    </x-page-header>
+    <form class="panel mb-6" method="GET" aria-label="Pencarian artikel"><div class="panel-body flex flex-col gap-4 md:flex-row md:items-end"><div class="flex-1"><label class="label" for="knowledge_q">Cari artikel</label><div class="relative"><x-icon name="search" size="17" class="pointer-events-none absolute left-3.5 top-1/2 z-10 -translate-y-1/2 text-muted" /><input id="knowledge_q" class="input pl-10" name="q" value="{{ request('q') }}" placeholder="Cari judul atau ringkasan"></div></div><div class="md:w-60"><label class="label" for="category">Kategori</label><select id="category" class="input" name="category"><option value="">Semua kategori</option>@foreach($categories as $category)<option value="{{ $category->id }}" @selected(request('category') == $category->id)>{{ $category->name }}</option>@endforeach</select></div><button class="btn-primary" type="submit">Cari</button></div></form>
+    <div class="grid gap-6 xl:grid-cols-4"><div class="grid gap-4 sm:grid-cols-2 xl:col-span-3">
+        @forelse($articles as $article)<article class="card flex flex-col"><div class="flex items-center justify-between gap-2"><span class="text-xs font-bold uppercase tracking-wider text-accent">{{ $article->category->name }}</span><x-badge :value="$article->status" /></div><h2 class="mt-5 text-xl font-bold tracking-[-0.02em]"><a href="{{ route('knowledge.show', $article) }}" class="hover:text-accent">{{ $article->title }}</a></h2><p class="mt-3 flex-1 text-sm leading-6 text-muted">{{ str($article->summary)->limit(140) }}</p><div class="mt-6 flex items-center justify-between border-t border-line pt-4 text-xs text-muted"><span>{{ $article->author->name }}</span><span>{{ number_format($article->view_count) }} dilihat</span></div></article>
+        @empty<div class="panel sm:col-span-2"><x-empty-state title="Artikel tidak ditemukan" description="Ubah kata kunci pencarian atau tulis artikel baru." icon="book" /></div>@endforelse
+    </div><x-panel title="Paling sering dibaca" description="Panduan yang banyak membantu tim." class="self-start"><div class="divide-y divide-line">@forelse($popular as $item)<a class="group flex items-center justify-between gap-3 py-3 first:pt-0 last:pb-0" href="{{ route('knowledge.show', $item) }}"><div><p class="text-sm font-semibold leading-6 group-hover:text-accent">{{ $item->title }}</p><p class="mt-1 text-xs text-muted">{{ $item->view_count }} pembaca</p></div><x-icon name="arrow" size="15" class="text-muted" /></a>@empty<x-empty-state title="Belum ada artikel populer" description="Statistik baca akan muncul di sini." icon="book" />@endforelse</div></x-panel></div>
+    <div class="mt-6">{{ $articles->links() }}</div>
+</x-app-layout>

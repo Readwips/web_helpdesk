@@ -1,0 +1,2 @@
+@props(['title' => null, 'description' => null])
+<section {{ $attributes->merge(['class' => 'panel']) }}>@if($title || isset($actions))<header class="panel-header"><div>@if($title)<h2 class="text-base font-bold text-ink">{{ $title }}</h2>@endif @if($description)<p class="mt-1 text-xs leading-5 text-muted">{{ $description }}</p>@endif</div>@isset($actions)<div class="flex items-center gap-2">{{ $actions }}</div>@endisset</header>@endif<div class="panel-body">{{ $slot }}</div></section>

@@ -1,0 +1,3 @@
+@props(['label', 'value', 'tone' => 'accent', 'icon' => 'report'])
+@php $tones=['accent'=>'bg-accent-soft text-accent','neutral'=>'bg-[#EFEFEA] text-ink','warning'=>'bg-amber-100 text-amber-800','danger'=>'bg-red-100 text-red-700','success'=>'bg-emerald-100 text-emerald-700']; @endphp
+<article {{ $attributes->merge(['class'=>'stat-card']) }}><div class="flex items-start justify-between gap-4"><div class="stat-label">{{ $label }}</div><span class="grid h-9 w-9 place-items-center rounded-lg {{ $tones[$tone]??$tones['neutral'] }}"><x-icon :name="$icon" size="17"/></span></div><div class="stat-value">{{ $value }}</div>@isset($footer)<div class="mt-3 text-xs text-muted">{{ $footer }}</div>@endisset</article>
