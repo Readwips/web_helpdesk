@@ -32,22 +32,26 @@ Antarmuka menggunakan design system orisinal yang terdokumentasi pada `DESIGN.md
 ## Teknologi
 
 - PHP 8.2+, Laravel 12, Laravel Breeze Blade, Eloquent ORM
-- MySQL 8 untuk runtime lokal
+- MySQL 8 untuk basis data
 - Blade, Tailwind CSS, Alpine.js, JavaScript, Chart.js
 - Maatwebsite Laravel Excel dan Barryvdh Laravel DOMPDF
 - PHPUnit Feature Test dan Laravel Pint
 
-## Persyaratan Lokal
+## Persyaratan Sistem
 
 - PHP 8.2 atau lebih baru dengan ekstensi `bcmath`, `ctype`, `curl`, `dom`, `fileinfo`, `gd`, `mbstring`, `openssl`, `pdo_mysql`, `tokenizer`, `xml`, dan `zip`.
 - Composer 2, MySQL 8, Node.js 20.19+ (atau 22.12+), dan npm.
-- Windows PowerShell, Command Prompt, atau terminal lain yang mendukung perintah PHP/Composer/npm.
+- Terminal yang mendukung perintah PHP, Composer, dan npm.
 
 ## Instalasi
 
-```powershell
+```bash
 composer install
-Copy-Item .env.example .env
+```
+
+Salin file `.env.example` menjadi `.env` menggunakan file manager atau perintah yang sesuai dengan sistem operasi, lalu jalankan:
+
+```bash
 php artisan key:generate
 npm install
 ```
@@ -60,36 +64,36 @@ CREATE DATABASE it_helpdesk_asset_management
   COLLATE utf8mb4_unicode_ci;
 ```
 
-Isi kredensial lokal pada `.env` (jangan menyimpan kredensial produksi di source code):
+Sesuaikan konfigurasi database pada `.env` dengan environment yang digunakan (jangan menyimpan kredensial produksi di source code):
 
 ```dotenv
 DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
+DB_HOST=alamat_host_mysql
 DB_PORT=3306
 DB_DATABASE=it_helpdesk_asset_management
 DB_USERNAME=root
-DB_PASSWORD=kata_sandi_mysql_lokal
+DB_PASSWORD=kata_sandi_mysql
 ```
 
 Kemudian siapkan data dan frontend:
 
-```powershell
+```bash
 php artisan migrate:fresh --seed --no-interaction
 npm run build
 php artisan serve
 ```
 
-Buka `http://127.0.0.1:8000`.
+Buka alamat yang ditampilkan oleh perintah `php artisan serve`.
 
 Untuk pengembangan frontend:
 
-```powershell
+```bash
 npm run dev
 ```
 
 ## Akun Demo
 
-Khusus development dan demonstrasi lokal:
+Khusus development dan demonstrasi:
 
 | Role | Email | Password |
 |---|---|---|
@@ -121,16 +125,16 @@ Seeder juga membuat dua teknisi tambahan, tujuh pengguna tambahan, 5 departemen,
 
 ## Menjalankan Test dan Formatter
 
-Test memakai SQLite in-memory agar terisolasi dari database lokal:
+Test memakai SQLite in-memory agar terisolasi dari database utama:
 
-```powershell
+```bash
 php artisan test
-vendor\bin\pint --test
+php vendor/bin/pint --test
 ```
 
-Validasi instalasi runtime tetap harus dijalankan pada MySQL lokal:
+Validasi instalasi runtime tetap harus dijalankan menggunakan MySQL:
 
-```powershell
+```bash
 php artisan optimize:clear
 php artisan migrate:fresh --seed --no-interaction
 php artisan migrate:status
