@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="IT Helpdesk adalah sistem terintegrasi untuk tiket dukungan, inventaris aset, perbaikan, dan laporan operasional TI.">
+    <meta name="theme-color" content="#171716">
+    <meta property="og:title" content="IT Helpdesk">
+    <meta property="og:description" content="Setiap masalah tercatat. Setiap solusi terlihat.">
+    <meta property="og:type" content="website">
+    <title>IT Helpdesk</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="container nav" aria-label="Navigasi utama">
+            <a class="brand" href="#top" aria-label="IT Helpdesk — Beranda">
+                <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+                <span><strong>IT Helpdesk</strong><small>Support workspace</small></span>
+            </a>
+            <div class="nav-links">
+                <a href="#workflow">Cara kerja</a>
+                <a href="#features">Fitur</a>
+                <a href="#preview">Preview</a>
+            </div>
+            <a class="button button-dark nav-cta" href="https://github.com/Readwips/web_helpdesk" target="_blank" rel="noreferrer">Repository <span aria-hidden="true">↗</span></a>
+        </nav>
+    </header>
+
+    <main id="top">
+        <section class="hero">
+            <div class="container hero-inner">
+                <p class="eyebrow">Layanan TI internal yang lebih teratur</p>
+                <h1>Setiap masalah tercatat.<br>Setiap solusi terlihat.</h1>
+                <p class="hero-copy">Sistem terpadu untuk pelaporan masalah, penugasan teknisi, dokumentasi solusi, inventaris aset, dan laporan operasional.</p>
+                <div class="hero-actions">
+                    <a class="button button-dark" href="#preview">Lihat antarmuka <span aria-hidden="true">↓</span></a>
+                    <a class="button button-light" href="https://github.com/Readwips/web_helpdesk#readme" target="_blank" rel="noreferrer">Baca dokumentasi</a>
+                </div>
+            </div>
+
+            <div class="container" id="preview">
+                <div class="product-window" aria-label="Preview dashboard IT Helpdesk">
+                    <div class="window-bar">
+                        <div class="window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+                        <span>Ruang kerja dukungan</span>
+                    </div>
+                    <div class="product-body">
+                        <aside class="mock-sidebar">
+                            <span class="mini-brand" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+                            <div class="mock-nav">
+                                <div><span class="line-icon grid-icon"></span><b></b></div>
+                                <div class="active"><span class="line-icon ticket-icon"></span><b></b></div>
+                                <div><span class="line-icon screen-icon"></span><b></b></div>
+                                <div><span class="line-icon book-icon"></span><b></b></div>
+                            </div>
+                        </aside>
+                        <div class="mock-content">
+                            <div class="mock-heading"><div><small>Permintaan dukungan</small><h2>Tiket Helpdesk</h2></div><span class="mock-button">+ Tiket baru</span></div>
+                            <div class="stats">
+                                <div><strong>24</strong><span>Tiket aktif</span></div>
+                                <div><strong>08</strong><span>Diproses</span></div>
+                                <div><strong>05</strong><span>Konfirmasi</span></div>
+                                <div><strong>19</strong><span>Selesai</span></div>
+                            </div>
+                            <div class="ticket-table" role="table" aria-label="Contoh daftar tiket">
+                                <div class="table-row table-head" role="row"><span>Nomor</span><span>Judul</span><span>Prioritas</span><span>Status</span></div>
+                                <div class="table-row" role="row"><b>HD-0241</b><span>Akses Wi-Fi lantai dua terputus</span><span>Tinggi</span><em>Diproses</em></div>
+                                <div class="table-row" role="row"><b>HD-0240</b><span>Permintaan instalasi aplikasi</span><span>Normal</span><em>Ditugaskan</em></div>
+                                <div class="table-row" role="row"><b>HD-0239</b><span>Monitor ruang rapat tidak tampil</span><span>Normal</span><em>Konfirmasi</em></div>
+                                <div class="table-row" role="row"><b>HD-0238</b><span>Reset kata sandi akun internal</span><span>Rendah</span><em>Selesai</em></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="workflow">
+            <div class="container">
+                <div class="section-heading">
+                    <div><p class="eyebrow">Alur kerja terstruktur</p><h2>Dari laporan hingga konfirmasi.</h2></div>
+                    <p>Setiap tahap memiliki penanggung jawab yang jelas dan seluruh perubahan tersimpan dalam riwayat tiket.</p>
+                </div>
+                <ol class="workflow-grid">
+                    <li><span>01</span><strong>Pengguna membuat tiket</strong><p>Masalah dicatat dan nomor tiket dibuat otomatis.</p></li>
+                    <li><span>02</span><strong>Admin menugaskan</strong><p>Teknisi dan prioritas dipilih sesuai kebutuhan.</p></li>
+                    <li><span>03</span><strong>Teknisi memproses</strong><p>Pemeriksaan dan tindakan dilakukan secara terarah.</p></li>
+                    <li><span>04</span><strong>Solusi dicatat</strong><p>Diagnosis serta solusi terdokumentasi dengan lengkap.</p></li>
+                    <li><span>05</span><strong>Pengguna mengonfirmasi</strong><p>Masalah dipastikan selesai oleh pemilik tiket.</p></li>
+                    <li><span>06</span><strong>Riwayat tersimpan</strong><p>Setiap status dan aktivitas dapat ditelusuri kembali.</p></li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="section section-muted" id="features">
+            <div class="container">
+                <div class="section-heading">
+                    <div><p class="eyebrow">Kemampuan utama</p><h2>Satu ruang kerja untuk operasional TI.</h2></div>
+                    <p>Didesain untuk membantu pengguna, teknisi, dan administrator bekerja dengan informasi yang sama.</p>
+                </div>
+                <div class="feature-grid">
+                    <article><span>01</span><h3>Tiket terstruktur</h3><p>Nomor otomatis, kategori, prioritas, lampiran, komentar, dan status yang mudah dilacak.</p></article>
+                    <article><span>02</span><h3>Akses sesuai peran</h3><p>Dashboard dan kewenangan terpisah untuk pengguna, teknisi, dan administrator.</p></article>
+                    <article><span>03</span><h3>Inventaris aset</h3><p>Kondisi, lokasi, pengguna, garansi, penugasan, dan riwayat perangkat.</p></article>
+                    <article><span>04</span><h3>Catatan perbaikan</h3><p>Diagnosis, tindakan, komponen, hasil, jadwal perawatan, dan biaya perbaikan.</p></article>
+                    <article><span>05</span><h3>Pusat pengetahuan</h3><p>Dokumentasi solusi yang dapat ditemukan dan digunakan kembali oleh tim.</p></article>
+                    <article><span>06</span><h3>Laporan operasional</h3><p>Ringkasan berbasis data dengan ekspor Excel dan PDF sesuai filter aktif.</p></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container cta-inner">
+                <div><p class="eyebrow eyebrow-light">Source code tersedia</p><h2>Jelajahi implementasi lengkapnya.</h2><p>Preview ini menampilkan antarmuka statis. Aplikasi Laravel lengkap beserta autentikasi, database, dan workflow tersedia di repository.</p></div>
+                <a class="button button-white" href="https://github.com/Readwips/web_helpdesk" target="_blank" rel="noreferrer">Buka repository <span aria-hidden="true">↗</span></a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-inner">
+            <a class="brand brand-inverse" href="#top"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span><strong>IT Helpdesk</strong><small>Support workspace</small></span></a>
+            <p>Laravel · Tailwind CSS · Alpine.js · Chart.js</p>
+        </div>
+    </footer>
+</body>
+</html>

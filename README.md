@@ -1,5 +1,7 @@
 # IT Helpdesk
 
+[Lihat preview antarmuka](https://readwips.github.io/web_helpdesk/) · [Dokumentasi instalasi](#instalasi)
+
 Aplikasi web Laravel untuk mengelola layanan dukungan IT, workflow tiket, inventaris perangkat, penugasan aset, dokumentasi perbaikan, knowledge base, dashboard operasional, serta laporan.
 
 Antarmuka menggunakan design system orisinal yang terdokumentasi pada `DESIGN.md`: palet netral, aksen sage, tipografi tegas, border tipis, komponen Blade reusable, serta layout responsif desktop dan mobile.
